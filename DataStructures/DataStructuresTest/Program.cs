@@ -62,6 +62,45 @@
                 current = current.next;
             }
 
+            Console.WriteLine("Testing Remove method.");
+            list.Remove(1);
+            current = list.head;
+            while (current != null)
+            {
+                Console.WriteLine(current.val);
+                current = current.next;
+            }
+            list.Remove(1);
+
+            Console.WriteLine("Testing RemoveFirst method.");
+            list.RemoveFirst();
+            current = list.head;
+            while (current != null)
+            {
+                Console.WriteLine(current.val);
+                current = current.next;
+            }
+
+            Console.WriteLine("Testing RemoveLast method.");
+            list.RemoveLast();
+            current = list.head;
+            while (current != null)
+            {
+                Console.WriteLine(current.val);
+                current = current.next;
+            }
+
+            Console.WriteLine("Testing Clear method.");
+            list.Clear();
+            list.RemoveFirst();
+            list.RemoveLast();
+            current = list.head;
+            while (current != null)
+            {
+                Console.WriteLine(current.val);
+                current = current.next;
+            }
+
             Console.WriteLine("Linked List test complete.");
         }
     }

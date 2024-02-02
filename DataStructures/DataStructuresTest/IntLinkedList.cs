@@ -64,7 +64,7 @@ namespace DataStructuresTest
                 head = head.next;
             } else
             {
-                throw new NullReferenceException("There are no nodes left to remove.");
+                Console.WriteLine("There are no nodes left to remove.");
             }
         }
 
@@ -73,15 +73,17 @@ namespace DataStructuresTest
             if (head != null)
             {
                 ListNode? current = head;
+                ListNode prev = new ListNode(0);
                 while (current.next != null)
                 {
+                    prev = current;
                     current = current.next;
                 }
-                current.next = null;
+                prev.next = null;
             }
             else
             {
-                throw new NullReferenceException("There are no nodes left to remove.");
+                Console.WriteLine("There are no nodes left to remove.");
             }
         }
 
@@ -138,12 +140,12 @@ namespace DataStructuresTest
             Console.WriteLine("Node does not exist.");
         }
 
-        public void Remove(ListNode node)
+        public void Remove(int val)
         {
             ListNode? current = head;
             while (current != null && current.next != null)
             {
-                if (current.next == node)
+                if (current.next.val == val)
                 {
                     current.next = current.next.next;
                     return;
